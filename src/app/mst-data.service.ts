@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { io } from 'socket.io-client';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
+import MstData from './MstData';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MstDataService {
 
-  public dataUpdates = new BehaviorSubject('');
+  public dataUpdates = new Subject<MstData>();
 
   constructor() { }
 

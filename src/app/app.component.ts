@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MstDataService } from './mst-data.service';
+import MstData from './MstData';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import { MstDataService } from './mst-data.service';
 })
 export class AppComponent {
   title = 'nickives-mst';
-  dataList: string[] = [];
+  dataList: MstData[] = [];
   private dataService: MstDataService;
 
   constructor(dataService: MstDataService) {
