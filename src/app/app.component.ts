@@ -74,19 +74,20 @@ export class AppComponent implements AfterViewInit {
     this.dataService = dataService;
   }
 
-  ngOnInit() {
-  }
-
   ngAfterViewInit() {
-    console.log('afterview');
+    /**
+     * We have to bind the data service *after* view init here because otherwise it won't
+     * play nicely with the sort, and the sort needs the view to be constructed first
+     * otherwise it sees it as undefined.
+     */
     this.dataSource.sort = this.sort;
     this.dataService
-    .getDataUpdate()
-    .subscribe((data) => {
-      this.dataList.push(data);
-      this.table.renderRows();
-      this.dataSource._updateChangeSubscription();
-    });
+      .getDataUpdate()
+      .subscribe((data) => {
+        this.dataList.push(data);
+        this.table.renderRows();
+        this.dataSource._updateChangeSubscription();
+      });
   }
 
 }
