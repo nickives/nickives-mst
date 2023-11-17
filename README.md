@@ -37,7 +37,7 @@ This class simply binds the Socket.io client to an RxJS `Subject`. This allows u
 ```
 
 ## App
-This is a straightforward Angular component. It takes the `MstData` service and uses it to update the table in real time. It also supports sorting based on first name, last name, and score.
+This is a straightforward Angular component. It takes the `MstData` service and uses it to update the table in real time. It also supports sorting based on first name, last name, and score. The table sort announces when the sort state changes. This is lifted directly from the Material component documentation and uses the built-in Angular `LiveAnnouncer`.
 
 # Future considerations
 This project lacks test coverage. My preference generally is [Testing Library](https://testing-library.com/), which [has angular support](https://testing-library.com/docs/angular-testing-library/intro/). Testing library is good because it uses actual DOM nodes, and encourages the use of accessible selectors. This means tests can be designed around the actual interactions users will make with components.
