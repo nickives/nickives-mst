@@ -8,9 +8,177 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <main>
-  <div>MST Example Data Service</div>
-  <div *ngFor="let data of dataList"> {{data.First}} {{data.Last}}
-  </div>
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>
+        MST Example Data Service
+      </mat-card-title>
+    </mat-card-header>
+  </mat-card>
+  <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="First">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by first name">First Name</th>
+          <td mat-cell *matCellDef="let data">{{data.First}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Last">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by last name">Last Name</th>
+          <td mat-cell *matCellDef="let data">{{data.Last}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Score">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by score">Score</th>
+          <td mat-cell *matCellDef="let data">{{data.Score}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Today">
+          <th mat-header-cell *matHeaderCellDef>Today</th>
+          <td mat-cell *matCellDef="let data">{{data.Today}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole1STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 1 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole1STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole1Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 1 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole1Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole2STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 2 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole2STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole2Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 2 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole2Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole3STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 3 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole3STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole3Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 3 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole3Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole4STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 4 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole4STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole4Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 4 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole4Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole5STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 5 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole5STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole5Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 5 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole5Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole6STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 6 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole6STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole6Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 6 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole6Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole7STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 7 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole7STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole7Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 7 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole7Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole8STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 8 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole8STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole8Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 8 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole8Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole9STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 9 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole9STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole9Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 9 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole9Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole10STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 10 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole10STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole10Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 10 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole10Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole11STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 11 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole11STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole11Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 11 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole11Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole12STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 12 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole12STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole12Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 12 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole12Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole13STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 13 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole13STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole13Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 13 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole13Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole14STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 14 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole14STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole14Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 14 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole14Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole15STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 15 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole15STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole15Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 15 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole15Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole16STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 16 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole16STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole16Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 16 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole16Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole17STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 17 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole17STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole17Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 17 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole17Strokes}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole18STP">
+          <th mat-header-cell *matHeaderCellDef>Hole 18 STP</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole18STP}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Hole18Strokes">
+          <th mat-header-cell *matHeaderCellDef>Hole 18 Strokes</th>
+          <td mat-cell *matCellDef="let data">{{data.Hole18Strokes}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

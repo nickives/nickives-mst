@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { io } from 'socket.io-client';
-import { Subject, Observable } from 'rxjs';
+import { Subject } from 'rxjs';
 import MstData from './MstData';
 
 @Injectable({
@@ -8,7 +8,7 @@ import MstData from './MstData';
 })
 export class MstDataService {
 
-  public dataUpdates = new Subject<MstData>();
+  public dataSubject = new Subject<MstData>();
 
   constructor() { }
 
@@ -16,8 +16,9 @@ export class MstDataService {
 
   public getDataUpdate = () => {
     this.socket.on('data-update', (data) => {
-      this.dataUpdates.next(data);
+      console.log(data);
+      this.dataSubject.next(data);
     });
-    return this.dataUpdates.asObservable();
+    return this.dataSubject;
   }
 }
